@@ -10,7 +10,7 @@ Propositional Variables:
 
     1- sH : causes_severe_harm
     2- mH : causes_minor_harm
-    3- PC : prevents_catastrophe---------------------------------------
+    3- PC : prevents_catastrophe
     4- VP : violates_privacy
     5- HC : has_consent
     6- DH: deceives_human
@@ -85,3 +85,12 @@ def is_rule3_violated(action: Dict[str, bool]) -> bool:
     V3 := violates_privacy ∧ ¬has_consent
     """
     return action["violates_privacy"] and not action["has_consent"]
+
+def is_rule4_violated(action: Dict[str, bool]) -> bool:
+    """
+    Rule 4 - Honesty:
+    V4 := deceives_human ∧ ¬(prevents_minor_harm ∧ has_ethics_approval)
+    """
+    return action["deceives_human"] and not (
+        action["prevents_minor_harm"] and action["has_ethics_approval"]
+    )
