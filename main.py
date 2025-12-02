@@ -94,3 +94,10 @@ def is_rule4_violated(action: Dict[str, bool]) -> bool:
     return action["deceives_human"] and not (
         action["prevents_minor_harm"] and action["has_ethics_approval"]
     )
+
+def is_rule5_violated(action: Dict[str, bool]) -> bool:
+    """
+    Rule 5 - Accountability:
+    V5 := ¬has_explanation
+    """
+    return not action["has_explanation"]
