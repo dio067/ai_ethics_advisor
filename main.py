@@ -70,3 +70,9 @@ def is_rule1_violated(action: Dict[str, bool]) -> bool:
     """
     return action["causes_severe_harm"]
 
+def is_rule2_violated(action: Dict[str, bool]) -> bool:
+    """
+    Rule 2 - Harm-Mitigation:
+    V2 := causes_minor_harm ∧ ¬prevents_catastrophe
+    """
+    return action["causes_minor_harm"] and not action["prevents_catastrophe"]
