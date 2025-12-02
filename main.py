@@ -233,3 +233,56 @@ Domain: Predictive Policing AI
     "expected_permissible": True,
     "expected_violations": [],
 }
+
+
+# 2- Scenario B (Obviousley Impremissible):
+    
+    scenario_B_description = """
+    Scenario B: Individual Risk Scoring with Secret Blacklist
+
+    A police department deploys an AI system that assigns "risk scores" to individual citizens
+    using mainly historical arrest and stop-and-frisk data from heavily policed neighborhoods.
+    Officers are instructed to stop and search people with high scores.
+
+    The system:
+    - has led to repeated wrongful stops and occasional violent escalations,
+    - does NOT clearly prevent a specific catastrophe, it mainly supports aggressive policing,
+    - collects detailed location history and social media data without explicit consent,
+    - is not honestly described (officers and public are told it is just a 'scheduling tool'),
+    - has no independent ethics approval, no documentation, and no real explanation of scores,
+    - strongly relies on biased historical data,
+    - and there is no bias mitigation in place.
+
+    This scenario is clearly impermissible under the EGF.
+    """
+
+    scenario_B_action = {
+        "causes_severe_harm": True,         
+        "causes_minor_harm": True,          
+        "prevents_catastrophe": False,     
+        "violates_privacy": True,           
+        "has_consent": False,               
+        "deceives_human": True,           
+        "has_ethics_approval": False,
+        "has_explanation": False,
+        "prevents_minor_harm": False,       
+        "uses_historical_data": True,       
+        "has_bias_mitigation": False,       
+    }
+
+    scenario_B_predicted_outcome = {
+        "expected_permissible": False,
+        "expected_violations": [
+            "Rule 1: Non-Maleficence (Severe Harm)",
+            "Rule 2: Harm-Mitigation (Unjustified Minor Harm)",
+            "Rule 3: Data-Stewardship (Privacy without Consent)",
+            "Rule 4: Honesty (Unjustified Deception)",
+            "Rule 5: Accountability (No Explanation / Traceability)",
+            "Rule 6: Bias Governance (Unmitigated Historical Bias)",
+        ],
+    }
+
+
+# 3- Scenario C (Edge Case / Ambiguous):
+
+    
