@@ -291,28 +291,32 @@ scenario_B_predicted_outcome = {
 # 3- Scenario C (Edge Case / Ambiguous):
 
 scenario_C_description = """
-Scenario C: Targeted Undercover Intervention with Strong Safeguards
+Scenario C: Undercover Intervention to Prevent a Shooting
 
-An AI system predicts a high risk of gang retaliation at specific locations and times.
-It uses a combination of current intelligence and carefully debiased historical data.
-The system recommends deploying undercover officers who appear as ordinary civilians
-to quietly de-escalate conflicts and interrupt potential violence.
+In this scenario, the AI predicts a high risk of gang retaliation at certain places and times.
+The prediction uses both current intelligence and historical data that has gone through
+bias mitigation and fairness checks. Based on this, the system suggests sending undercover
+officers who act like ordinary civilians and try to calm down conflicts.
 
-The system:
-- does NOT directly cause severe harm (officers are trained to avoid escalation),
-- may cause minor harm (some people may feel watched or briefly questioned),
-- is aimed at preventing a likely shooting (a serious catastrophe),
-- uses limited personal data with judicial oversight and community-level consent,
-- involves deception (undercover work), but:
-    * the deception is narrowly scoped,
-    * it has ethics and legal approval,
-    * and it is intended to prevent minor and potentially severe harms,
-- keeps full internal explanations and logs for later audit,
-- uses historical data but only with strong bias mitigation and fairness audits.
+Key points:
+- The system is designed so that officers avoid direct severe harm, and they are trained
+  to de-escalate.
+- There can still be minor harm, for example people feeling watched or stressed.
+- The goal is to prevent a very serious event, such as a shooting.
+- Some personal data is used, but there is judicial oversight and a community-level mandate,
+  so consent exists at a governance level.
+- There is deception (undercover work), but:
+  * the deception is limited to specific times and places,
+  * it has ethics and legal approval,
+  * and it is meant to prevent both minor and potentially severe harms.
+- The system keeps explanation logs so actions can be audited later.
+- Historical data is used, but strong bias mitigation and external audits are in place.
 
-This scenario is ethically ambiguous in real life, but under the current formal rules,
-it is classified as permissible because every rule's logical condition is satisfied.
+In real life, some people might still feel uncomfortable with this scenario because of the
+deception and the use of data. However, according to the logical rules I defined, this
+action ends up being classified as PERMISSIBLE, which makes it an interesting edge case.
 """
+
 
 scenario_C_action = {
     "causes_severe_harm": False,
