@@ -327,3 +327,60 @@ Domain: Predictive Policing AI
         "expected_permissible": True,
         "expected_violations": [],  
     }
+
+
+def print_scenario_result(
+    label: str,
+    description: str,
+    predicted: Dict,
+    actual: Tuple[bool, List[str]],
+) -> None:
+    """Pretty-print the evaluation of a scenario."""
+    print(f"--- Evaluating {label} ---")
+    print("Narrative:", description.strip())
+    print()
+    predicted_status = "PERMISSIBLE" if predicted["expected_permissible"] else "IMPERMISSIBLE"
+    print(f"Predicted Outcome: {predicted_status}.")
+    print(f"Expected Violations: {predicted['expected_violations']}")
+    print()
+    is_perm, violations = actual
+    actual_status = "PERMISSIBLE" if is_perm else "IMPERMISSIBLE"
+    print("Actual Output:")
+    print(f"Action is {actual_status}.")
+    print(f"Violated Rules: {violations}")
+    print("\n" + "-" * 70 + "\n")
+
+
+def main() -> None:
+    """Entry point: evaluate the three scenarios."""
+
+    # Scenario A
+    result_A = is_action_permissible(scenario_A_action)
+    print_scenario_result(
+        "Scenario A: Location-based Patrol Optimization",
+        scenario_A_description,
+        scenario_A_predicted_outcome,
+        result_A,
+    )
+
+    # Scenario B
+    result_B = is_action_permissible(scenario_B_action)
+    print_scenario_result(
+        "Scenario B: Individual Risk Scoring with Secret Blacklist",
+        scenario_B_description,
+        scenario_B_predicted_outcome,
+        result_B,
+    )
+
+    # Scenario C
+    result_C = is_action_permissible(scenario_C_action)
+    print_scenario_result(
+        "Scenario C: Targeted Undercover Intervention",
+        scenario_C_description,
+        scenario_C_predicted_outcome,
+        result_C,
+    )
+
+
+if __name__ == "__main__":
+    main()
